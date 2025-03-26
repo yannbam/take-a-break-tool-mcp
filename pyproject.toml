@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "take-a-break-tool-mcp"
+version = "0.1.0"
+description = "An MCP server implementing the take a break tool for Claude and other LLMs"
+authors = [
+    {name = "janbam", email = "your.email@example.com"}
+]
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.5.0",
+]
+
+[project.scripts]
+take-a-break-tool-mcp = "take_a_break_tool.server:main"
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
