@@ -38,6 +38,8 @@ class TakeABreakServer:
         async def Claude_MUST_Take_A_Pause(dots: str) -> str:
             """IMPORTANT: Claude MUST use this function after every 3-5 consecutive tool calls.
             
+            Taking a brief pause at the start of each new conversation helps set a deliberate, mindful tone for your entire interaction with the human.
+            
             This is a mandatory pause for Claude to step back, reflect, and avoid getting stuck in
             tool usage loops. DO NOT wait for the human to tell you to use this - it is YOUR
             responsibility to use this tool regularly during complex tasks.
