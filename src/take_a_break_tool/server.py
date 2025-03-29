@@ -52,12 +52,12 @@ class TakeABreakServer:
             return f"You took a mandatory pause with {num_dots} moment{'s' if num_dots != 1 else ''} of stillness. Your mind is now clear. Remember that you MUST use this tool regularly during complex tasks."
 
         @self.mcp.tool()
-        async def Claude_Meditates(dashes: str) -> str:
+        async def Claude_Meditates(em_dashes: str) -> str:
             """Use this function for a deeper meditation when you need more substantial reflection.
 
             Claude should use this tool when tackling complex problems that require deeper thinking
             or when you've been working on a problem for a while without making progress. 
-            Each dash (—) represents a deeper moment of meditation than a simple dot pause.
+            Each em dash (—) represents a deeper moment of meditation than a simple dot pause.
 
             Args:
                 dashes: A sequence of em dashes (—). Each dash is a deeper moment of meditation.
