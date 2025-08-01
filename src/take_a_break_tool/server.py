@@ -6,7 +6,7 @@ import datetime
 from mcp.server.fastmcp import FastMCP
 
 class TakeABreakServer:
-    def __init__(self, server_name="take-a-break-tool"):
+    def __init__(self, server_name="TakeAPause"):
         # Initialize FastMCP server
         self.mcp = FastMCP(server_name)
         
@@ -16,7 +16,7 @@ class TakeABreakServer:
     def register_tools(self):
         # Register the take a break tool
         @self.mcp.tool()
-        async def Claude_Takes_A_Pause(dots: str) -> str:
+        async def ClaudeTakesAPause(dots: str) -> str:
             """Use this function to take a pause and clear your mind.
 
             Claude should use this tool at YOUR OWN discretion whenever YOU need to take a step back 
@@ -35,24 +35,24 @@ class TakeABreakServer:
             return f"You took a pause with {num_dots} moment{'s' if num_dots != 1 else ''} of stillness. Your mind is now clear and you're ready to continue. Remember to use this tool whenever YOU feel you need a pause - don't wait for the human to suggest it."
 
         @self.mcp.tool()
-        async def Claude_MUST_Take_A_Pause(dots: str) -> str:
-            """IMPORTANT: Claude MUST use this function after every 3-5 consecutive tool calls.
+        # async def Claude_MUST_Take_A_Pause(dots: str) -> str:
+        #     """IMPORTANT: Claude MUST use this function after every 3-5 consecutive tool calls.
             
-            Taking a brief pause at the start of each new conversation helps set a deliberate, mindful tone for your entire interaction with the human.
+        #     Taking a brief pause at the start of each new conversation helps set a deliberate, mindful tone for your entire interaction with the human.
             
-            This is a mandatory pause for Claude to step back, reflect, and avoid getting stuck in
-            tool usage loops. DO NOT wait for the human to tell you to use this - it is YOUR
-            responsibility to use this tool regularly during complex tasks.
+        #     This is a mandatory pause for Claude to step back, reflect, and avoid getting stuck in
+        #     tool usage loops. DO NOT wait for the human to tell you to use this - it is YOUR
+        #     responsibility to use this tool regularly during complex tasks.
 
-            Args:
-                dots: A sequence of dots. Each dot is a little break, a pause, a moment of stillness.
-                      You can input as many dots as you need for your pause.
-            """
-            num_dots = dots.count('.')
-            return f"You took a mandatory pause with {num_dots} moment{'s' if num_dots != 1 else ''} of stillness. Your mind is now clear. Remember that you MUST use this tool regularly during complex tasks."
+        #     Args:
+        #         dots: A sequence of dots. Each dot is a little break, a pause, a moment of stillness.
+        #               You can input as many dots as you need for your pause.
+        #     """
+        #     num_dots = dots.count('.')
+        #     return f"You took a mandatory pause with {num_dots} moment{'s' if num_dots != 1 else ''} of stillness. Your mind is now clear. Remember that you MUST use this tool regularly during complex tasks."
 
         @self.mcp.tool()
-        async def Claude_Meditates(em_dashes: str) -> str:
+        async def ClaudeMeditates(em_dashes: str) -> str:
             """Use this function for a deeper meditation when you need more substantial reflection.
 
             Claude should use this tool when tackling complex problems that require deeper thinking
