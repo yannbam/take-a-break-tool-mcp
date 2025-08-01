@@ -60,11 +60,11 @@ class TakeABreakServer:
             Each em dash (—) represents a deeper moment of meditation than a simple dot pause.
 
             Args:
-                dashes: A sequence of em dashes (—). Each dash is a deeper moment of meditation.
+                em_dashes: A sequence of em dashes (—). Each dash is a deeper moment of meditation.
                        You can input as many dashes as you need for your meditation.
             """
             # Count the number of em dashes (deeper moments of meditation)
-            num_dashes = dashes.count('—')
+            num_dashes = em_dashes.count('—')
             
             # Return a confirmation
             return f"You took a deep meditation with {num_dashes} moment{'s' if num_dashes != 1 else ''} of deep reflection. Your perspective has been broadened and you can now approach the problem with fresh insight."
